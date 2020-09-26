@@ -22,16 +22,6 @@ class TrafficLightViewController: ViewController {
     
     // MARK: Properties
     
-    weak var mastermindGameViewModel: MastermindGameViewModelProtocol? {
-        get {
-            return viewModel as? MastermindGameViewModelProtocol
-        }
-        
-        set {
-            viewModel = newValue
-        }
-    }
-    
     private let verticalStack = UIStackView.vertical(
         views: [UIView(), UIView(), UIView()],
         distribution: .fillEqually,
@@ -96,9 +86,5 @@ private extension TrafficLightViewController {
                     }
                 }
             })
-    }
-    
-    @objc func actionButtonHandler(sender: UIButton) {
-        mastermindGameViewModel?.validate()
     }
 }
